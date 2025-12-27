@@ -155,7 +155,7 @@ td:first-child {
   left: 0;
   background: var(--card);
   text-align: left;
-  padding-left: 10px;
+  padding-left: 80px;
   font-weight: 600;
   min-width: 10px;
   z-index: 6;
