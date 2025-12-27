@@ -3,55 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <title>Monthly Habit Tracker</title>
+
+  <!-- MOBILE VIEWPORT (MANDATORY) -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
+  <div class="container">
 
-  <!-- HEADER -->
-  <h2 class="title">📅 Monthly Habit Tracker</h2>
-  <p class="subtitle">Track your consistency for 31 days</p>
+    <!-- HEADER -->
+    <h2 class="title">📅 Monthly Habit Tracker</h2>
+    <p class="subtitle">Track your consistency for 31 days</p>
 
-  <!-- ADD HABIT -->
-  <div class="add-habit">
-    <input
-      id="habitInput"
-      type="text"
-      placeholder="Enter habit"
-      autocomplete="off"
-    >
-    <button id="addHabitBtn">Add Habit</button>
+    <!-- ADD HABIT -->
+    <div class="add-habit">
+      <input
+        id="habitInput"
+        type="text"
+        placeholder="Enter habit"
+        autocomplete="off"
+      >
+      <button id="addHabitBtn">Add Habit</button>
+    </div>
+
+    <!-- PROGRESS -->
+    <div class="graph-box">
+      <h3>Overall Progress</h3>
+      <canvas id="progressChart" width="300" height="150"></canvas>
+      <p id="percentageText">0%</p>
+    </div>
+
+    <!-- TABLE -->
+    <div class="table-wrapper">
+      <table id="habitTable">
+        <thead>
+          <tr>
+            <th>Habit</th>
+            <script>
+              for (let i = 1; i <= 31; i++) {
+                document.write(`<th>${i}</th>`);
+              }
+            </script>
+            <th>❌</th>
+          </tr>
+        </thead>
+        <tbody id="habitBody"></tbody>
+      </table>
+    </div>
+
   </div>
 
-  <!-- PROGRESS -->
-  <div class="graph-box">
-    <h3>Overall Progress</h3>
-    <canvas id="progressChart" width="300" height="150"></canvas>
-    <p id="percentageText">0%</p>
-  </div>
-
-  <!-- TABLE (MOBILE SAFE) -->
-  <div class="table-wrapper">
-    <table id="habitTable">
-      <thead>
-        <tr>
-          <th>Habit</th>
-          <script>
-            for (let i = 1; i <= 31; i++) {
-              document.write(`<th>${i}</th>`);
-            }
-          </script>
-          <th>❌</th>
-        </tr>
-      </thead>
-      <tbody id="habitBody"></tbody>
-    </table>
-  </div>
-
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
