@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Habit Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+
+<div class="container">
+<h2 class="title">📅 Monthly Habit Tracker</h2>
+<p class="subtitle">Track your consistency for 31 days</p>
+
+
+  <div class="add-habit">
+    <input id="habitInput" type="text" placeholder="Enter habit">
+    <button id="addHabitBtn">Add Habit</button>
+  </div>
+
+  <!-- GRAPH SECTION (INSIDE BODY) -->
+  <div class="graph-box">
+    <h3>Overall Progress</h3>
+    <canvas id="progressChart" width="300" height="150"></canvas>
+    <p id="percentageText">0%</p>
+  </div>
+
+  <table id="habitTable">
+    <thead>
+      <tr>
+        <th>Habit</th>
+        <script>
+          for (let i = 1; i <= 31; i++) {
+            document.write(`<th>${i}</th>`);
+          }
+        </script>
+        <th>❌</th>
+      </tr>
+    </thead>
+    <tbody id="habitBody"></tbody>
+  </table>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
